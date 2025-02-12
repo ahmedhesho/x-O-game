@@ -1,0 +1,70 @@
+* {
+    background: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.gamebox{
+    width: 300px; /* Defined width for the game box */
+    margin: 50px auto;
+    text-align: center;
+    color: aliceblue;
+    padding: 20px;
+    border: 5px solid rgb(216, 168, 248); /* Adding a border to the game box */
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.title{
+    padding: 10px 0;
+    margin: 5px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+span{
+    color: rgb(216, 168, 248);
+
+}
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* Create 3 equal-width columns */
+    grid-template-rows: repeat(3, 80px); /* 3 rows of equal height */
+    grid-gap: 2px; /* Space between squares */
+    width: calc(3 * 80px + 2 * 2px); /* Adjust width to account for grid-gap */
+    margin: auto;
+}
+.square{
+    width: 80px;
+    height: 80px;
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    line-height: 80px; /* Centers the text vertically */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    
+} 
+.square:hover {
+    background-color: rgb(189, 120, 245);
+}
+
+/* Winning squares highlight */
+.winner {
+    background-color: lightgreen; /* Highlight color */
+    border: 2px solid darkgreen; /* Border for emphasis */
+    animation: winner-glow 1s infinite alternate;
+}
+
+/* Animation for the winning squares */
+@keyframes winner-glow {
+    from {
+        box-shadow: 0 0 10px darkgreen;
+    }
+    to {
+        box-shadow: 0 0 20px limegreen;
+    }
+}
